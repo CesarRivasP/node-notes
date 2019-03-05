@@ -27,3 +27,11 @@ En el process hay una parte muy importante llamada argumentos 'argv', los cuales
   - La ubicación de node
   - La ubicación del archivo que se esta utilizando (path)
 Nota: A la hora de ejecutar comandos que reciben argumentos, cada vez que se le agregan argumentos, cada uno de los argumentos adicionales lo recibe el argv.
+
+- El npm init proporciona una guia para la creacion del package.json  
+  * Puede tener cualquier nombre siempre que sea URL friendly (sin espacios, sin mayúsculas)
+  * El entry point es el primer archivo de node que se ejecuta y después despliega el resto de la aplicación
+  * El package-lock.json es un registro de todo lo que se hizo para poder tener instalados cada uno de los paquetes que se tienen como dependencias en el package.json
+  * Todo lo que esta en node_modules son plugins y paquetes necesarios para que las dependencias que tenga definidas el proyecto. Por lo general no es enviado a los módulos de producción ni repositorios de git, solo basta tener el package.json para que al realizar un npm install se descarguen todos los paquetes y plugins necesarios para la ejecución del proyecto.
+    + No es recomendable subir los node_modules a los repositorios de git porque las librerías que este contiene pueden variar dependiendo del sistema operativo
+Nota: Si se instalan paquetes de forma local, y no de manera global, no se van a ocupar privilegios de superusuario porque va a estar corriendo localmente en el proyecto indicado
