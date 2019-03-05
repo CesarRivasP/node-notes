@@ -21,3 +21,9 @@ const fs = require('fs');
 
 - Existe un objeto global que se llama 'module' el cual posee una serie de atributos como el id, una parte de exportaciones que es como un lugar en donde se pueden poner objetos para que sean trabajados de forma global, el path de donde se esta ejecutando el archivo, entre otras cosas.
 El modulo es un objeto global que esta disponible a lo largo de toda la aplicación
+
+- Otro de los objetos globales se llama 'process', no hay que definirlo en ningún lugar, puesto que node al ejecutarse crea dicha variable de entorno.
+En el process hay una parte muy importante llamada argumentos 'argv', los cuales son dos:
+  - La ubicación de node
+  - La ubicación del archivo que se esta utilizando (path)
+Nota: A la hora de ejecutar comandos que reciben argumentos, cada vez que se le agregan argumentos, cada uno de los argumentos adicionales lo recibe el argv.
