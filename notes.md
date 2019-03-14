@@ -35,3 +35,10 @@ Nota: A la hora de ejecutar comandos que reciben argumentos, cada vez que se le 
   * Todo lo que esta en node_modules son plugins y paquetes necesarios para que las dependencias que tenga definidas el proyecto. Por lo general no es enviado a los módulos de producción ni repositorios de git, solo basta tener el package.json para que al realizar un npm install se descarguen todos los paquetes y plugins necesarios para la ejecución del proyecto.
     + No es recomendable subir los node_modules a los repositorios de git porque las librerías que este contiene pueden variar dependiendo del sistema operativo
 Nota: Si se instalan paquetes de forma local, y no de manera global, no se van a ocupar privilegios de superusuario porque va a estar corriendo localmente en el proyecto indicado
+
+
+Libreria Yargs
+En el método command va a contener 3 argumentos:
+  - Nombre del comando
+  - Información para mostrar el usuario
+  - Es un objeto que va a recibir la configuración de parámetros (flags) que ese comando puede recibir
