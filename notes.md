@@ -42,3 +42,18 @@ En el método command va a contener 3 argumentos:
   - Nombre del comando
   - Información para mostrar el usuario
   - Es un objeto que va a recibir la configuración de parámetros (flags) que ese comando puede recibir
+
+
+- Tanto la librería request como axios se encargan de lo mismo, trabajan con peticiones hacia servicios REST.
+La principal diferencia es que axios trabaja en base a promesas y request en base a callbacks
+
+Status de las peticiones
+- 200: se hizo correctamente
+- 404: no encontró el url
+- 500: error del servidor
+
+- Un Bad Request quiere decir que se solicito mal la información, se realizo la llamada al servicio mal
+
+
+HTTP
+- El paquete http nativo de node, nos permite crear web servers listos para desplegar contenido en la web
