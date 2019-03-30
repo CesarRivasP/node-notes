@@ -54,6 +54,17 @@ Status de las peticiones
 
 - Un Bad Request quiere decir que se solicito mal la información, se realizo la llamada al servicio mal
 
+Public
+Aqui se encuentra la informacion o el contenido que puede ser visto por cualquiera
 
 HTTP
 - El paquete http nativo de node, nos permite crear web servers listos para desplegar contenido en la web
+- Al trabajar con este server, escucha todas las peticiones sin importar de que url sean
+
+EXPRESS
+- Internamente usa el modulo http nativo de node
+- Internamente la función 'send' va a detectar que es un objeto, y lo va a serializar en formato JSON
+- Al trabajar en express se puede crear un middleware que permite filtrar cualquier tipo de petición
+
+Middleware
+Es una instrucción o un callback que se va a ejecutar siempre, no importa que url es el que se este pidiendo
