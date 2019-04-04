@@ -55,7 +55,8 @@ Status de las peticiones
 - Un Bad Request quiere decir que se solicito mal la información, se realizo la llamada al servicio mal
 
 Public
-Aqui se encuentra la informacion o el contenido que puede ser visto por cualquiera
+Aquí se encuentra la información o el contenido que puede ser visto por cualquiera.
+Todo archivo dentro de esa carpeta automáticamente queda siendo disponible para cualquier persona
 
 HTTP
 - El paquete http nativo de node, nos permite crear web servers listos para desplegar contenido en la web
@@ -68,3 +69,41 @@ EXPRESS
 
 Middleware
 Es una instrucción o un callback que se va a ejecutar siempre, no importa que url es el que se este pidiendo
+
+Paquete hbs
+Este paquete le va a permitir a express poder renderizar las paginas que usan la sintaxis de handlebars y poderle mandar una respuesta al cliente de manera que nuestro sitio web sea dinámico
+
+Parciales
+Es un lote de codigo html que se puede reutlizar
+
+dirname
+Indica que no importa el path en el que se encuentre, deebe tomar ese path (es una variable global) y concatenale la siguiente ruta
+```
+(__dirname, '/views/partials')
+```
+
+Banderas para node
+-e para que este pendiente de los archivos indicados por medio de su extensión
+
+Helpers del hbs
+Es una función que se dispara cuando el template lo requiere
+
+Peticiones GET
+Se suele utilizar para obtener los datos
+
+Peticiones POST
+Es muy utilizado para crear registros
+- Normalmente no solo se realiza la petición, si no que también hay que mandar información
+
+Peticiones PUT
+Es muy utilizado cuando lo que se quiere es actualizar data
+* Por lo general, a la hora de hacer una actualización esta se realiza por la Url. Para que este tipo de petición acepte la url hay que especificar el path.
+Nota: El método PATCH y el PUT son manejados de la misma manera
+
+Peticiones DELETE
+* En las bases de datos ya no se acostumbra borrar registros, por lo que se acostumbra en una petición delete solamente cambiar el estado de algo para que ya no este disponible, pero el registro siempre queda
+
+body-parcer
+Este paquete permite procesar la información de la petición post que se este enviando desde la aplicación al servidor, y la serializa en un objeto json para que sea fácilmente procesada en las peticiones post
+
+- Los app.use son middlewares, funciones que se van a disparar cada vez que la ejecución pase por su linea de ubicación
