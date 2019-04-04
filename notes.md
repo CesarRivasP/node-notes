@@ -23,6 +23,8 @@ const fs = require('fs');
 El modulo es un objeto global que esta disponible a lo largo de toda la aplicación
 
 - Otro de los objetos globales se llama 'process', no hay que definirlo en ningún lugar, puesto que node al ejecutarse crea dicha variable de entorno.
+* Este objeto global se encuentra corriendo a lo largo de toda la aplicacion de node.
+* Tambien, este objeto es actualizado dependiendo del entorno en el que se encuentre corriendo
 En el process hay una parte muy importante llamada argumentos 'argv', los cuales son dos:
   - La ubicación de node
   - La ubicación del archivo que se esta utilizando (path)
