@@ -107,3 +107,6 @@ body-parcer
 Este paquete permite procesar la información de la petición post que se este enviando desde la aplicación al servidor, y la serializa en un objeto json para que sea fácilmente procesada en las peticiones post
 
 - Los app.use son middlewares, funciones que se van a disparar cada vez que la ejecución pase por su linea de ubicación
+
+Status 400
+Este error es producto de que no se envió la información como el servicio la espera
