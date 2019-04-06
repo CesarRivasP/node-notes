@@ -112,3 +112,6 @@ Este paquete permite procesar la información de la petición post que se este e
 
 Status 400
 Este error es producto de que no se envió la información como el servicio la espera
+
+Conexión con MongoDB
+- Si al indicar la ruta de conexión con la base de datos a la que esperamos acceder, aunque esta base de datos no ha sido creada, se puede hacer una conexión perfectamente. Y cuando se realicen inserciones a esta base de datos (que no existe) mongoose y mongo van a crear toda la estructura necesaria para funcionar
