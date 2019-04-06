@@ -118,3 +118,10 @@ Conexión con MongoDB
 
 Modelo del usuario
 Un modelo es un objeto de mongoose que nos va a permitir realizar inserciones, actualizaciones, trabajar con funciones ya creadas por el equipo de mongo que nos otorgan facilidades y crear funciones personalizadas por nosotros.
+
+Encriptacion
+Método hash de una sola vía
+Este método permite que si el usuario o un tercero obtiene toda la cadena de caracteres creada, no va a ser posible construirla a la versión anterior o a su forma original.
+El paquete a usar es bcrypt
+  - hashSync: hace el hash de forma sincrona, es decir, sin necesidad de usar un callback, promesa, etc. Lo realiza directamente.
+    hashSync(data a almacenar, numero de vueltas que se quiere aplicarle a el hash)
