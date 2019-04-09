@@ -155,12 +155,15 @@ Tokens
 - Hay varios tipos de tokens de diferentes formatos
 - La estructura de Json Web Token (JWT) esta dividido en tres partes:
   + Header: usualmente se visualiza como la parte inicial y roja del token, y esta contiene información sobre el algoritmo utilizado para la encriptacion junto con el tipo de token. En este caso un JWT
+    - HS256: ese algoritmo es una encriptacion de doble vía, quiere decir, que aunque parezca que esta segura la información, la parte del payload es totalmente visible y si alguien obtiene ese token, podria ser capaz de poder obtener el payload, la fecha de emision, expiracion y otras cosas.
+    Esto no garantiza que la información esta encriptada de una forma totalmente segura
   + Payload: Contiene la información que se quiere que este en el token. Aunque este parezca que esta encriptado,
   es sencillo obtener el código
   + Firma: permite a los verificadores de Json Web Token constatar si el token es valido. Es decir, se va a firmar el token de manera que si la persona no sabe exactamente como fue que se construyo los tokens falsos, no van a poder pasar la validaciones que se van a colocar en el lado del backend server.
   El token es algo que va a existir en cada una de las computadoras clientes. Las computadoras clientes todas van a tener un token único totalmente diferente. Claro, la estructura es parecida, pero el contenido del mismo es único, por lo que si cada una de esas maquinas se quiere conectar a la aplicación que estaría montada en un servidor, y quieren obtener información de algún servicio, y este requiere alguna autenticación, va a pedir el token. Si no se suministra el token el servidor no mandara la información.
   La validacion se realiza en el momento.
-DIcciove72/aA
+  En la parte de la firma es algo que se debe configurar en el backend para que de esa manera se puedan recibir los tokens y nos aseguremos que esos tokens no fueron manipulados y si lo fue se pueda detectar el cambio y que este no sea un token valido para la aplicacion
+
 Practica
   ```
 function parseJwt (token) {
@@ -171,3 +174,14 @@ function parseJwt (token) {
   ```
 Nota:
 **NO se debe de usar para validar tokens, no es el código ideal para eso, es un código para extraer información de un token desde el Front-End. NO USAR EN EL BACKEND**
+
+Local Storage
+En el navegador, la pestaña de aplicación tiene una sección llamada **Local Storage**, en la cual se almacena información como las cokies, también se puede grabar información para que permanezca persistente en el equipo.
+Normalmente el Local Storage comparte información por dominio, es decir, cuando estemos en otro dominio va a tener otra información almacenada.
+- Esta parte es totalmente manipulable por parte del cliente
+- Aquí también se encuentra información del token, el cual esta del lado del cliente y el cliente lo puede observar
+Sesion Storage
+Es similar al Local Storage, pero este se borra cuando se cierra el navegador web, el local storage permanece aunque reiniciemos la maquina, queda persistente.
+Nota:
+Los tokens son encriptados de doble via, por lo que hay maneras de obtener la información que contienen. Dicho esto, es importante que en los tokens no se guarde información sensible, como lo puede ser la contraseña del usuario, ya que esta queda totalmente visible. Si esta encriptado de una sola vía, va a ser muy complicado obtener la información, pero de igual manera se le estaría dando información que el usuario final no necesita
+La firma es la parte mas importante cuando se trabaja en la parte de node, porque si la firma no coincide con lo que nosotros generamos, ese token debe ser ignorado ya que fue manipulado por el usuario.
