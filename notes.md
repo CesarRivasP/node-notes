@@ -136,3 +136,38 @@ Devuelve una copia del objeto, filtrando solo los valores que se quieren.
 mLab
 Es un servicio gratuito de hasta 500 mb
 - Posteriormente se aliaron con mongodb en lo que deriva MongoDB Atlas
+
+Tokens
+Tanto físicos como virtuales, ambos funcionan para la misma tarea
+Virtuales
+Al ingresar a una plataforma y se quiere realizar alguna transacción, nos solicitaran estos números, mejor conocidos como un token. Una vez introducido el token nos va a permitir realizar una determinada tarea, ya que esta es una autorización de dos pasos:
+1.- El paso para autenticarnos en la plataforma
+2.- Luego, este token que esta asociado con nuestra cuenta. Por lo que si se quisiera acceder a nuestra cuenta, necesitarían tanto el token como la clave física.
+- En el curso se va a trabajar con un formato de tokens que son semejantes a un JSON web token.
+
+¿Por que usar tokens?
+- Variables de sesión
+Las aplicaciones utilizan estas variables para manejar la autenticación de los usuarios
+* Una variable de sesión se crea cuando un usuario se autentica correctamente en nuestra aplicación
+* Son muy utilizadas en aplicación de hasta unos 5000 a 10000 usuarios mas o menos, y mediante estas se dificulta el acceso simultaneo de un usuarios desde diferentes equipos
+Para resolver ese problema de las variables de sesión se utilizan los:
+Tokens
+- Hay varios tipos de tokens de diferentes formatos
+- La estructura de Json Web Token (JWT) esta dividido en tres partes:
+  + Header: usualmente se visualiza como la parte inicial y roja del token, y esta contiene información sobre el algoritmo utilizado para la encriptacion junto con el tipo de token. En este caso un JWT
+  + Payload: Contiene la información que se quiere que este en el token. Aunque este parezca que esta encriptado,
+  es sencillo obtener el código
+  + Firma: permite a los verificadores de Json Web Token constatar si el token es valido. Es decir, se va a firmar el token de manera que si la persona no sabe exactamente como fue que se construyo los tokens falsos, no van a poder pasar la validaciones que se van a colocar en el lado del backend server.
+  El token es algo que va a existir en cada una de las computadoras clientes. Las computadoras clientes todas van a tener un token único totalmente diferente. Claro, la estructura es parecida, pero el contenido del mismo es único, por lo que si cada una de esas maquinas se quiere conectar a la aplicación que estaría montada en un servidor, y quieren obtener información de algún servicio, y este requiere alguna autenticación, va a pedir el token. Si no se suministra el token el servidor no mandara la información.
+  La validacion se realiza en el momento.
+DIcciove72/aA
+Practica
+  ```
+function parseJwt (token) {
+    var base64Url = token.split('.')[1];
+    var base64 = base64Url.replace('-', '+').replace('_', '/');
+    return JSON.parse(window.atob(base64));
+};
+  ```
+Nota:
+**NO se debe de usar para validar tokens, no es el código ideal para eso, es un código para extraer información de un token desde el Front-End. NO USAR EN EL BACKEND**
