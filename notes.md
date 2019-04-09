@@ -115,6 +115,8 @@ Este error es producto de que no se envió la información como el servicio la e
 
 Conexión con MongoDB
 - Si al indicar la ruta de conexión con la base de datos a la que esperamos acceder, aunque esta base de datos no ha sido creada, se puede hacer una conexión perfectamente. Y cuando se realicen inserciones a esta base de datos (que no existe) mongoose y mongo van a crear toda la estructura necesaria para funcionar
+- Se puede utilizar robo3t como manejador de bases de datos para mongoDB localmente
+- Para conectarse al mongoDB Atlas o en general a las bases de datos mongo se puede utilizar mongoDB Compass
 
 Modelo del usuario
 Un modelo es un objeto de mongoose que nos va a permitir realizar inserciones, actualizaciones, trabajar con funciones ya creadas por el equipo de mongo que nos otorgan facilidades y crear funciones personalizadas por nosotros.
@@ -125,3 +127,12 @@ Este método permite que si el usuario o un tercero obtiene toda la cadena de ca
 El paquete a usar es bcrypt
   - hashSync: hace el hash de forma sincrona, es decir, sin necesidad de usar un callback, promesa, etc. Lo realiza directamente.
     hashSync(data a almacenar, numero de vueltas que se quiere aplicarle a el hash)
+
+Underscore
+Es una librería que expande js con muchas funcionalidades que debería tener por defecto
+* pick
+Devuelve una copia del objeto, filtrando solo los valores que se quieren.
+
+mLab
+Es un servicio gratuito de hasta 500 mb
+- Posteriormente se aliaron con mongodb en lo que deriva MongoDB Atlas
