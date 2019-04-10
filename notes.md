@@ -126,7 +126,8 @@ Método hash de una sola vía
 Este método permite que si el usuario o un tercero obtiene toda la cadena de caracteres creada, no va a ser posible construirla a la versión anterior o a su forma original.
 El paquete a usar es bcrypt
   - hashSync: hace el hash de forma sincrona, es decir, sin necesidad de usar un callback, promesa, etc. Lo realiza directamente.
-    hashSync(data a almacenar, numero de vueltas que se quiere aplicarle a el hash)
+  hashSync(data a almacenar, numero de vueltas que se quiere aplicarle a el hash)
+  - Esta librería trae funcionalidades para validar contraseñas de un login
 
 Underscore
 Es una librería que expande js con muchas funcionalidades que debería tener por defecto
