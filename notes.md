@@ -199,3 +199,16 @@ La firma es la parte mas importante cuando se trabaja en la parte de node, porqu
 Middleware
 Los middlewares se colocan como segundos argumentos en los servicios usando express
 - No es necesario definir paréntesis, puesto que no se esta llamando la función, se esta indicando que es un middleware que se va a disparar cuando se quiera accesar o revisar la ruta
+
+
+### Integracion de Google Sign-in con nuestro servicio REST
+Google ofrece al menos, 6 proyectos gratuitos.
+
+- Ingresar al siguiente enlace:
+`https://developers.google.com/identity/sign-in/web/sign-in`
+- Configure a project
+- Una vez se ingreso a apis y servicios, dirigirse a credenciales
+  * Crear credenciales
+  * ID de cliente OAuth
+  * Tipo de Aplicación: web
+  * Origenes autorizados de Javascript: http:/localhost
