@@ -201,7 +201,7 @@ Los middlewares se colocan como segundos argumentos en los servicios usando expr
 - No es necesario definir paréntesis, puesto que no se esta llamando la función, se esta indicando que es un middleware que se va a disparar cuando se quiera accesar o revisar la ruta
 
 
-### Integracion de Google Sign-in con nuestro servicio REST
+### Integración de Google Sign-in con nuestro servicio REST
 Google ofrece al menos, 6 proyectos gratuitos.
 
 - Ingresar al siguiente enlace:
@@ -211,4 +211,7 @@ Google ofrece al menos, 6 proyectos gratuitos.
   * Crear credenciales
   * ID de cliente OAuth
   * Tipo de Aplicación: web
-  * Origenes autorizados de Javascript: http:/localhost
+  * Orígenes autorizados de Javascript: http:/localhost
+
+Nota: la información del usuario que se obtiene del lado del frontend no es la misma que hay que mandar al backend porque cualquier usuario podría modificar su local storage, cambiar su id y mandarlo a nuestros servicios ocasionando una serie de problemas y afectando la seguridad del mismo. No se debe confiar en lo antes mencionado, para evitar eso google genera un token. El token es lo que se debe mandar al backend. El backend va a tomar el token, lo va a validar con una librería de google, y si eso es valido entonces se debería crear el usuario.
+Se puede enviar el token a nuestro servidor mediante un POST https. El código para enviarla peticion es mediante ajax.
