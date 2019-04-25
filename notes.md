@@ -105,7 +105,7 @@ Nota: El método PATCH y el PUT son manejados de la misma manera
 Peticiones DELETE
 * En las bases de datos ya no se acostumbra borrar registros, por lo que se acostumbra en una petición delete solamente cambiar el estado de algo para que ya no este disponible, pero el registro siempre queda
 
-body-parcer
+body-parser
 Este paquete permite procesar la información de la petición post que se este enviando desde la aplicación al servidor, y la serializa en un objeto json para que sea fácilmente procesada en las peticiones post
 
 - Los app.use son middlewares, funciones que se van a disparar cada vez que la ejecución pase por su linea de ubicación
