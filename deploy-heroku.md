@@ -15,9 +15,11 @@ git push heroku master
 ```
 
 ### Por interfaz grafica
-- heroku git:remote -a <<name-app>>
-- git push heroku master
-- heroku open
+```
+heroku git:remote -a <<name-app>>
+git push heroku master
+heroku open
+```
 
 ### Para visualizar variables de entorno de Heroku
 ```
