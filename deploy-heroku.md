@@ -1,6 +1,9 @@
 ## Deploy en Heroku
 1.- Agregar en los scripts del package.json el start para la ejecución del programa
-2.- `heroku login`
+2.- Ingresar tu usuario de heroku
+```
+heroku login
+```
 
 ### Por la terminal
 ```
