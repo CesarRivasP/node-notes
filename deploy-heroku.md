@@ -8,13 +8,13 @@
 heroku login
 ```
 
-### Por la terminal
+### Si quieres crear el proyecto por la terminal
 ```
 heroku create
 git push heroku master
 ```
 
-### Por interfaz grafica
+### Si quieres crear el por la interfaz grafica
 ```
 heroku git:remote -a <<name-app>>
 git push heroku master
