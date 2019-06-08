@@ -8,3 +8,12 @@ Lo que se busca es que el servidor pueda disparar notificaciones indicando que h
 Un socket permite mantener una comunicación activa entre la maquina cliente y el servidor. Es decir, que el servidor va a ser capaz de dispararle notificaciones a la maquina cliente, y la maquina cliente puede interactuar con lo que sea que le responda el servidor. Por lo general se puede mandar Strings, Booleanos, números o un objeto completo. Esto permite al cliente ser notificado en tiempo real cuando algo sucede.
 También te permite ser notificado cuando un usuario se conecta o desconecta, y cuando se vuelve a conectar.
 También permite disparar eventos personalizados, y esa es una característica que hace de los sockets flexibles.
+
+### Implementacion con express
+Socket.io no trabaja directamente con express, pero si trabaja con un servidor http que trae por defecto node
+
+
+Si al ingresar:
+`http://localhost:3000/socket.io/socket.io.js`
+Se puede visualizar el código fuente de la libreria, es porque se tiene correctamente configurado socket.io en la parte del backend.
+Una vez se pueda visualizar dicho archivo, hay que configurar el frontend para que lo utilice. Este tiene la configuración para trabajar con el backend y mantener una comunicación abierta entre ambos lugares.
