@@ -3,9 +3,10 @@
 2.- `heroku login`
 
 ### Por la terminal
-`heroku create`
-`git push heroku master`
-
+```
+heroku create
+git push heroku master
+```
 
 ### Por interfaz grafica
 - heroku git:remote -a <<name-app>>
