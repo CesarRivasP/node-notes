@@ -1,16 +1,16 @@
-Event Loop - Ciclo de eventos de Node
+## Event Loop - Ciclo de eventos de Node
 Es el ciclo de vida que tiene node al ejecutar un programa
 
-Ciclo de vida de un proceso
+### Ciclo de vida de un proceso
 
-- App1
+#### App1
 * Ejecuta el proceso main()
 * Coloca en la pila de procesos la primera linea de código y luego lo elimina
   + Y así sucesivamente va a realizar dicha acción con las siguientes lineas de código
   + Ejecuta y elimina de la pila de procesos
 * Cuando ya no hay nada en la pila de procesos, node termina el proceso main()
 
-- App2
+#### App2
 * Se crea el main() y se empieza a ejecutar
   + El main contiene todo el código que se encuentra en el app2.js
 * Registra la función greet
@@ -21,10 +21,11 @@ Al terminar la función se quita de la pila de procesos
 * Pasa al console.log, lo ejecuta y lo borra de la pila de procesos
 * Se elimina el main
 
-- App3
+#### App3
 - Los procesos en node van de:
-  Pila de procesos (Call Stack) -> Node Apis -> Cola de Callbacks
-
+```
+Pila de procesos (Call Stack) -> Node Apis -> Cola de Callbacks
+```
 * Crea el main
 * Ejecuta y quita de la pila la primera linea de código
 * Coloca en la pila el primer setTimeout y lo registra
